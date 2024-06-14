@@ -111,6 +111,22 @@ function filtrarAuto(){
     const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo).filter(filtrarPuertas).filter(filtrarTransmision).filter(filtrarColor);
 
     mostrarAutos(resultado);
+
+    if(resultado.length){
+
+    }else{
+        noResultado();
+    }
+}
+
+function noResultado(){
+
+    limpiarHTML();
+
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta', 'error');
+    noResultado.textContent = 'No hay resultados, intenta con otros términos de búsqueda';
+    resultado.appendChild(noResultado);
 }
 
 function filtrarColor(auto){
